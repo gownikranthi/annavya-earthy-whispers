@@ -33,6 +33,15 @@ const productImageMap: Record<ProductImageKey, string> = {
   "kodo-pack": kodoPack,
 };
 
+export function Ornament({ tone = "gold" }: { tone?: "gold" | "deep" }) {
+  const color = tone === "gold" ? "text-[color:var(--brand-gold)]" : "text-[color:var(--brand-gold-deep)]";
+  return (
+    <div className={`ornament-divider ${color}`} aria-hidden="true">
+      <span className="ornament-glyph">✦ ❀ ✦</span>
+    </div>
+  );
+}
+
 export function HeroSection() {
   return (
     <section className="section-shell overflow-hidden pt-0">
