@@ -42,11 +42,13 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 border-b border-[color:var(--line)] bg-[color:rgba(16,16,12,0.94)] backdrop-blur-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-8">
           <Link to="/" className="flex items-center gap-3" aria-label="Annavya Foods home">
-            <img src={logo} alt="Annavya Foods logo" className="h-12 w-auto sm:h-14" />
+            <span className="logo-badge">
+              <img src={logo} alt="Annavya Foods logo" className="h-10 w-auto sm:h-12" />
+            </span>
             <div className="hidden min-[480px]:block">
-              <p className="font-serif text-lg text-[color:var(--brand-gold)]">Annavya Foods</p>
-              <p className="text-xs uppercase tracking-[0.24em] text-[color:var(--muted-ink)]">
-                Premium millet brand
+              <p className="font-display text-lg text-[color:var(--brand-gold-soft)]">Annavya Foods</p>
+              <p className="font-devanagari text-[0.78rem] leading-none text-[color:var(--muted-foreground)]">
+                अन्न से परिवार तक
               </p>
             </div>
           </Link>
@@ -118,11 +120,12 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       <footer className="border-t border-[color:var(--line)] bg-[color:var(--surface-strong)]">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.3fr_0.8fr_0.9fr] lg:px-8">
           <div>
-            <img src={logo} alt="Annavya Foods emblem" className="h-16 w-auto" loading="lazy" />
-            <h2 className="mt-6 font-serif text-3xl text-[color:var(--paper)]">
+            <span className="logo-badge"><img src={logo} alt="Annavya Foods emblem" className="h-14 w-auto" loading="lazy" /></span>
+            <p className="mt-5 font-devanagari text-base text-[color:var(--brand-gold-soft)]">अन्नं ब्रह्म</p>
+            <h2 className="mt-2 font-serif text-3xl text-[color:var(--paper)]">
               Premium modern Indian millet sourcing rooted in traditional agriculture.
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-[color:var(--muted-ink)]">
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-[color:var(--muted-foreground)]">
               Annavya Foods is a premium millet supplier in India focused on trust, clean sourcing, and traditional grain excellence. We support distributor requirements, healthy food brands, and family buyers with direct farmer millets, certified processing, and premium product quality.
             </p>
             <div className="mt-5 flex flex-wrap gap-2 text-xs text-[color:var(--brand-gold-soft)]">
