@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Marcellus&family=Tiro+Devanagari+Hindi:ital@0;1&family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -19,27 +19,30 @@
 
 :root {
   --radius: 0.5rem;
-  --background: #0f110d;
+  --background: #0e120d;
   --foreground: #f2ebdc;
-  --primary: #c7a64b;
-  --primary-foreground: #17150f;
+  --primary: #d4ac4a;
+  --primary-foreground: #14180f;
   --border: rgba(214, 190, 140, 0.18);
   --input: rgba(214, 190, 140, 0.18);
   --muted-foreground: #c7bba5;
-  --paper: #f2ebdc;
-  --paper-warm: #efe4d2;
-  --surface: #171813;
-  --surface-strong: #11120f;
-  --ink-dark: #1f1b15;
-  --earth-brown: #63513b;
-  --brand-green: #213325;
-  --brand-green-deep: #152118;
-  --brand-gold: #c7a64b;
-  --brand-gold-soft: #dcc485;
+  --paper: #f5edd8;
+  --paper-warm: #f0e3cb;
+  --surface: #161b14;
+  --surface-strong: #0d110c;
+  --ink-dark: #1a1f17;
+  --earth-brown: #5d4a32;
+  --brand-green: #1d3324;
+  --brand-green-deep: #0f1d14;
+  --brand-gold: #d4ac4a;
+  --brand-gold-soft: #e6cb88;
   --brand-gold-deep: #9a7730;
-  --terracotta: #8e5a43;
-  --line: rgba(214, 190, 140, 0.18);
-  --line-soft: rgba(99, 81, 59, 0.16);
+  --terracotta: #a05a3c;
+  --line: rgba(214, 190, 140, 0.20);
+  --line-soft: rgba(99, 81, 59, 0.18);
+  --gradient-gold: linear-gradient(135deg, #e6cb88 0%, #d4ac4a 45%, #9a7730 100%);
+  --gradient-green: linear-gradient(160deg, #0f1d14 0%, #1d3324 60%, #0f1d14 100%);
+  --shadow-elegant: 0 30px 60px -30px rgba(0, 0, 0, 0.7);
 }
 
 @layer base {
@@ -55,32 +58,61 @@
   a { text-decoration: none; color: inherit; }
   img { display: block; max-width: 100%; }
   h1, h2, h3, h4, h5, h6, .font-serif { font-family: "Cormorant Garamond", serif; letter-spacing: 0; }
+  .font-devanagari { font-family: "Tiro Devanagari Hindi", serif; }
+  .font-display { font-family: "Marcellus", serif; letter-spacing: 0.02em; }
 }
 
 @layer components {
   .section-shell { position: relative; }
-  .section-dark { background: linear-gradient(180deg, #11120f 0%, #171813 100%); }
-  .section-light { background: linear-gradient(180deg, #efe4d2 0%, #eadcc8 100%); }
+  .section-dark {
+    background:
+      radial-gradient(ellipse at top, rgba(29, 51, 36, 0.55), transparent 60%),
+      linear-gradient(180deg, #0d110c 0%, #161b14 100%);
+  }
+  .section-light {
+    background:
+      radial-gradient(ellipse at top, rgba(214, 190, 140, 0.25), transparent 55%),
+      linear-gradient(180deg, #f0e3cb 0%, #e6d4b3 100%);
+  }
   .eyebrow {
-    display: inline-block;
-    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: "Marcellus", serif;
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.32em;
     color: var(--brand-gold-soft);
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: "";
+    display: inline-block;
+    width: 1.4rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
   }
   .btn-primary, .btn-outline, .btn-outline-light, .social-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     border-radius: 999px;
-    padding: 0.9rem 1.2rem;
-    font-size: 0.9rem;
+    padding: 0.9rem 1.4rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    transition: opacity 0.2s ease;
+    letter-spacing: 0.05em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   }
-  .btn-primary { background: var(--brand-gold); color: var(--primary-foreground); }
-  .btn-outline { border: 1px solid var(--line); color: var(--paper); }
-  .btn-outline-light { border: 1px solid var(--line-soft); color: var(--ink-dark); }
+  .btn-primary {
+    background: var(--gradient-gold);
+    color: var(--primary-foreground);
+    box-shadow: 0 10px 30px -12px rgba(212, 172, 74, 0.6);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 40px -12px rgba(212, 172, 74, 0.7); }
+  .btn-outline { border: 1px solid var(--line); color: var(--paper); background: rgba(255,255,255,0.02); }
+  .btn-outline:hover { background: rgba(214, 190, 140, 0.08); }
+  .btn-outline-light { border: 1px solid rgba(99, 81, 59, 0.4); color: var(--ink-dark); }
+  .btn-outline-light:hover { background: rgba(99, 81, 59, 0.08); }
   .social-link {
     justify-content: center;
     width: 2.75rem;
@@ -89,21 +121,86 @@
     border: 1px solid var(--line);
     color: var(--paper);
   }
+  .social-link:hover { background: rgba(214, 190, 140, 0.1); color: var(--brand-gold-soft); }
+
   .pattern-panel {
     background:
-      linear-gradient(rgba(21, 33, 24, 0.88), rgba(21, 33, 24, 0.88)),
-      radial-gradient(circle at top left, rgba(199, 166, 75, 0.14), transparent 40%);
+      linear-gradient(rgba(15, 29, 20, 0.92), rgba(15, 29, 20, 0.92)),
+      radial-gradient(circle at top left, rgba(212, 172, 74, 0.18), transparent 45%);
+    border-radius: 0.5rem;
   }
   .grain-overlay {
     background-image:
-      linear-gradient(rgba(12, 12, 9, 0.08), rgba(12, 12, 9, 0.08)),
+      linear-gradient(rgba(12, 12, 9, 0.06), rgba(12, 12, 9, 0.06)),
       radial-gradient(rgba(242, 235, 220, 0.06) 1px, transparent 1px);
     background-size: auto, 12px 12px;
   }
   .contact-panel {
-    background: linear-gradient(180deg, #171813 0%, #12130f 100%);
+    background:
+      linear-gradient(180deg, #171b13 0%, #11150e 100%),
+      radial-gradient(circle at top right, rgba(212, 172, 74, 0.12), transparent 50%);
     border: 1px solid var(--line);
     padding: 1.5rem;
     min-height: 13rem;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .contact-panel:hover { transform: translateY(-3px); border-color: var(--brand-gold); }
+
+  /* Indian arch frame for hero image */
+  .arch-frame {
+    clip-path: path("M0,400 L0,180 C0,80 60,0 200,0 C340,0 400,80 400,180 L400,400 Z");
+    -webkit-clip-path: path("M0,400 L0,180 C0,80 60,0 200,0 C340,0 400,80 400,180 L400,400 Z");
+  }
+
+  /* Traditional Indian ornament divider (paisley + dots) */
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--brand-gold);
+  }
+  .ornament-divider::before,
+  .ornament-divider::after {
+    content: "";
+    flex: 1;
+    max-width: 8rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    opacity: 0.6;
+  }
+  .ornament-glyph {
+    font-size: 1.1rem;
+    letter-spacing: 0.6em;
+    color: var(--brand-gold);
+    opacity: 0.85;
+  }
+
+  /* Mandala-inspired soft background dots */
+  .mandala-bg {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(212, 172, 74, 0.18) 1px, transparent 0);
+    background-size: 28px 28px;
+  }
+
+  /* Logo cream badge so the dark-green logo plaque reads cleanly on dark header */
+  .logo-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.55rem;
+    background: linear-gradient(180deg, #f5edd8 0%, #e8d8ad 100%);
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(154, 119, 48, 0.35);
+  }
+
+  /* Soft repeating block-print band */
+  .block-print-band {
+    background-image:
+      radial-gradient(circle at 50% 50%, var(--brand-gold) 22%, transparent 24%),
+      radial-gradient(circle at 50% 50%, var(--brand-gold) 22%, transparent 24%);
+    background-size: 18px 18px, 18px 18px;
+    background-position: 0 0, 9px 9px;
+    opacity: 0.5;
   }
 }
