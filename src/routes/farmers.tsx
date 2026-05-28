@@ -29,8 +29,8 @@ function FarmersPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Farmers"
-        title="Direct farmer millet sourcing that keeps authenticity visible."
-        description="The brand story begins in the field. By placing farmers at the center, Annavya Foods communicates honesty, rural value, and a more meaningful premium grain promise."
+        title="Direct farmer millet sourcing that keeps things real."
+        description="The brand story starts in the field. By keeping farmers at the centre, Annavya Foods shows honesty, rural value and a deeper premium grain promise."
       />
       <FarmersSection />
       <ContactSection />

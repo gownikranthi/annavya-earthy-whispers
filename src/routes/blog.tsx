@@ -28,8 +28,8 @@ function BlogPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Blog"
-        title="Stories and insights around millets, wellness, and Indian agricultural heritage."
-        description="This content layer strengthens organic visibility while helping visitors understand the nutritional, cultural, and sourcing depth behind the Annavya Foods brand."
+        title="Stories and insights on millets, wellness and Indian farming heritage."
+        description="This content layer builds organic search visibility and helps visitors understand the nutrition, culture and sourcing depth of the Annavya Foods brand."
       />
       <BlogPreviewSection />
       <ContactSection />

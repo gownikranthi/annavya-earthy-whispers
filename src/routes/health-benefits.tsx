@@ -29,8 +29,8 @@ function HealthBenefitsPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Health Benefits"
-        title="Traditional grains with strong relevance for modern healthy lifestyles."
-        description="Millets are valued for their wholesome nutrition, versatility, and role in balanced daily diets. Annavya Foods presents them with premium quality, cultural depth, and trustworthy sourcing."
+        title="Traditional grains that fit today's healthy life."
+        description="Millets are loved for their good nutrition, easy use and balanced daily diet. Annavya Foods gives them to you with premium quality, cultural depth and trusted sourcing."
       />
       <HealthSection />
       <ContactSection />

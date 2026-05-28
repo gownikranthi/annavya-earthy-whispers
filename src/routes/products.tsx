@@ -28,8 +28,8 @@ function ProductsPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Products"
-        title="A premium millet portfolio crafted for health-led families and bulk buyers."
-        description="Discover our curated millet range, from Foxtail and Barnyard to Kodo, Browntop, Ragi, Jowar, Bajra, and Proso, presented with premium quality and authentic sourcing."
+        title="A premium millet range made for health-loving families and bulk buyers."
+        description="See our millet range — Foxtail, Barnyard, Kodo, Browntop, Little, Ragi, Jowar, Bajra and Proso — with premium quality and trusted sourcing."
       />
       <ProductShowcaseSection />
       <ContactSection />

@@ -29,8 +29,8 @@ function ContactPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Contact"
-        title="Inquiry-led support for millet buyers, distributors, and wellness-led brands."
-        description="For product questions, bulk order discussions, and distributor interest, connect with Annavya Foods on WhatsApp, phone, Instagram, or Facebook."
+        title="Inquiry-first support for millet buyers, distributors and health food brands."
+        description="For product questions, bulk order talks and distributor interest — connect with Annavya Foods on WhatsApp, phone, Instagram or Facebook."
       />
       <BulkOrderSection />
       <ContactSection />

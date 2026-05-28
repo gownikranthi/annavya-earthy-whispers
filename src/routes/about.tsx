@@ -29,8 +29,8 @@ function AboutPage() {
     <SiteLayout>
       <PageHero
         eyebrow="About"
-        title="An Indian millet brand shaped by heritage, sourcing discipline, and premium trust."
-        description="Annavya Foods exists to present traditional Indian millets with elegance, authenticity, and a strong farm-to-family narrative for modern healthy living and distribution partnerships."
+        title="An Indian millet brand built on heritage, careful sourcing and premium trust."
+        description="Annavya Foods presents traditional Indian millets with care, real sourcing and a strong farm-to-family story for modern healthy living and distribution."
       />
       <IntroBand />
       <ProcessSection />
