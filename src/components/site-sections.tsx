@@ -22,15 +22,16 @@ import {
   products,
   trustMetrics,
   whatsappNumber,
+  type ProductImageKey,
 } from "@/lib/site-data";
 
-const productImageMap = {
+const productImageMap: Record<ProductImageKey, string> = {
   "foxtail-pack": foxtailPack,
   "barnyard-pack": barnyardPack,
   "browntop-pack": browntopPack,
   "little-pack": littlePack,
   "kodo-pack": kodoPack,
-} as const;
+};
 
 export function HeroSection() {
   return (

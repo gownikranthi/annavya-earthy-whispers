@@ -1,7 +1,14 @@
+export type ProductImageKey =
+  | "foxtail-pack"
+  | "barnyard-pack"
+  | "browntop-pack"
+  | "little-pack"
+  | "kodo-pack";
+
 export type Product = {
   name: string;
   description: string;
-  image?: string;
+  image?: ProductImageKey;
   packSize: string;
   benefits: string[];
 };
@@ -11,12 +18,7 @@ export const whatsappNumber = "919618296518";
 export const instagramHandle = "annavyafoods";
 export const facebookHandle = "annavyafoods";
 
-export const certifications = [
-  "Organic Certified",
-  "ISO Certified",
-  "FSSAI Certified",
-  "Lab Tested",
-];
+export const certifications = ["Organic Certified", "ISO Certified", "FSSAI Certified", "Lab Tested"];
 
 export const trustMetrics = [
   { value: "30 KG+", label: "Bulk order minimum" },
@@ -28,40 +30,35 @@ export const trustMetrics = [
 export const products: Product[] = [
   {
     name: "Foxtail Millet",
-    description:
-      "A premium heritage millet with a clean golden grain, ideal for modern Indian kitchens, wellness-led menus, and bulk retail supply.",
+    description: "A premium heritage millet with a clean golden grain, ideal for modern Indian kitchens, wellness-led menus, and bulk retail supply.",
     image: "foxtail-pack",
     packSize: "500 g / 1 kg / bulk sacks",
     benefits: ["Rich in fiber", "Supports weight balance", "Naturally gluten free"],
   },
   {
     name: "Barnyard Millet",
-    description:
-      "Light, versatile, and traditionally valued for fasting meals and nutrient-dense staples, sourced directly from farming communities.",
+    description: "Light, versatile, and traditionally valued for fasting meals and nutrient-dense staples, sourced directly from farming communities.",
     image: "barnyard-pack",
     packSize: "500 g / 1 kg / bulk sacks",
     benefits: ["Low glycemic profile", "Easy to cook", "Mineral rich"],
   },
   {
     name: "Browntop Millet",
-    description:
-      "A rare traditional millet celebrated for clean-label premium positioning and naturally wholesome nutrition.",
+    description: "A rare traditional millet celebrated for clean-label premium positioning and naturally wholesome nutrition.",
     image: "browntop-pack",
     packSize: "500 g / 1 kg / bulk sacks",
     benefits: ["High dietary fiber", "Traditional grain", "Wellness-focused"],
   },
   {
     name: "Little Millet",
-    description:
-      "An ancient Indian millet with delicate grain structure, suited for porridges, upma, rice alternatives, and health-forward food brands.",
+    description: "An ancient Indian millet with delicate grain structure, suited for porridges, upma, rice alternatives, and health-forward food brands.",
     image: "little-pack",
     packSize: "500 g / 1 kg / bulk sacks",
     benefits: ["Iron supportive", "Quick cooking", "Everyday staple"],
   },
   {
     name: "Kodo Millet",
-    description:
-      "Earthy and hearty, Kodo Millet is a reliable bulk choice for traditional meal programs, clean eating brands, and export-ready blends.",
+    description: "Earthy and hearty, Kodo Millet is a reliable bulk choice for traditional meal programs, clean eating brands, and export-ready blends.",
     image: "kodo-pack",
     packSize: "500 g / 1 kg / bulk sacks",
     benefits: ["Fiber dense", "Wholesome texture", "Traditional nutrition"],
@@ -133,20 +130,17 @@ export const benefits = [
 export const blogPosts = [
   {
     title: "Why traditional Indian millets are returning to modern kitchens",
-    excerpt:
-      "A look at how heritage grains are becoming the foundation of premium healthy food brands and family nutrition routines.",
+    excerpt: "A look at how heritage grains are becoming the foundation of premium healthy food brands and family nutrition routines.",
     slug: "traditional-indian-millets-modern-kitchens",
   },
   {
     title: "How direct farmer sourcing improves millet quality and trust",
-    excerpt:
-      "From traceability to cleaner procurement, direct sourcing helps distributors and families choose grain with more confidence.",
+    excerpt: "From traceability to cleaner procurement, direct sourcing helps distributors and families choose grain with more confidence.",
     slug: "direct-farmer-millet-sourcing-quality",
   },
   {
     title: "Foxtail, Barnyard, Kodo and more: choosing the right millet for your needs",
-    excerpt:
-      "Understand the role of each millet variety in retail, wholesale, food service, and healthy everyday cooking.",
+    excerpt: "Understand the role of each millet variety in retail, wholesale, food service, and healthy everyday cooking.",
     slug: "choosing-the-right-millet-variety",
   },
 ];
