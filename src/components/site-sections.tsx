@@ -57,15 +57,20 @@ export function HeroSection() {
 
         <div className="relative mx-auto grid min-h-[78svh] max-w-7xl items-end gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-18">
           <div className="max-w-3xl self-center pb-8 lg:pb-0">
-            <p className="eyebrow">Premium Millet Supplier India</p>
-            <h1 className="mt-5 font-serif text-5xl leading-[0.95] text-[color:var(--paper)] sm:text-6xl lg:text-7xl">
-              Premium traditional Indian millets, sourced with trust and delivered with heritage.
+            <p className="font-devanagari text-lg text-[color:var(--brand-gold-soft)] sm:text-xl">
+              अन्न से परिवार तक — शुद्धता की परंपरा
+            </p>
+            <p className="eyebrow mt-4">Premium Millet Supplier · India</p>
+            <h1 className="mt-5 font-serif text-[2.6rem] leading-[1.02] text-[color:var(--paper)] sm:text-6xl lg:text-7xl">
+              From sacred Indian soil to your family's table —{" "}
+              <span className="bg-[var(--gradient-gold)] bg-clip-text text-transparent">premium heritage millets</span>.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[color:var(--muted-ink)] sm:text-lg">
-              Annavya Foods brings together direct farmer sourcing, premium grain quality, and modern healthy living with a deeply rooted Indian agricultural story. Built for families, retailers, and distributor partners across India.
+            <p className="mt-6 max-w-2xl text-base leading-7 text-[color:var(--muted-foreground)] sm:text-lg sm:leading-8">
+              Annavya Foods brings together direct farmer sourcing, premium grain quality, and modern healthy living — rooted in deeply traditional Indian agriculture. Built for families, retailers, and distributor partners across India.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" className="btn-primary">
+                <Sparkles className="h-4 w-4" />
                 WhatsApp Inquiry
               </a>
               <a href={`tel:${phoneNumber.replace(/\s+/g, "")}`} className="btn-outline">
@@ -73,10 +78,10 @@ export function HeroSection() {
                 {phoneNumber}
               </a>
             </div>
-            <div className="mt-8 flex flex-wrap gap-3 text-xs uppercase tracking-[0.18em] text-[color:var(--brand-gold-soft)]">
+            <div className="mt-8 flex flex-wrap gap-2 text-[0.7rem] uppercase tracking-[0.18em] text-[color:var(--brand-gold-soft)] sm:gap-3 sm:text-xs">
               {certifications.map((item) => (
-                <span key={item} className="inline-flex items-center gap-2 rounded-full border border-[color:rgba(214,190,140,0.22)] px-4 py-2">
-                  <BadgeCheck className="h-4 w-4" />
+                <span key={item} className="inline-flex items-center gap-2 rounded-full border border-[color:rgba(214,190,140,0.22)] bg-[color:rgba(15,29,20,0.5)] px-3 py-1.5 sm:px-4 sm:py-2">
+                  <BadgeCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   {item}
                 </span>
               ))}
