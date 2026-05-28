@@ -113,21 +113,28 @@ export function HeroSection() {
 
 export function IntroBand() {
   return (
-    <section className="section-shell section-dark border-b border-[color:var(--line)]">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-18">
-        <div>
-          <p className="eyebrow">Brand story</p>
-          <h2 className="mt-4 font-serif text-4xl text-[color:var(--paper)] sm:text-5xl">
-            A premium modern Indian organic food brand deeply rooted in traditional agriculture.
-          </h2>
-        </div>
-        <div className="space-y-5 text-base leading-8 text-[color:var(--muted-ink)]">
-          <p>
-            The Annavya Foods experience is built around trust, authenticity, and grain quality. We highlight real farmers, real sourcing, and real processing standards so every inquiry begins with confidence.
-          </p>
-          <p>
-            This is not an ecommerce-first brand. It is a premium inquiry-led destination for families, retail partners, and distributors seeking certified millet products with a meaningful farm-to-family story.
-          </p>
+    <section className="section-shell section-dark border-b border-[color:var(--line)] relative">
+      <div className="mandala-bg absolute inset-0 opacity-30" aria-hidden="true" />
+      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <Ornament />
+        <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className="eyebrow">Brand story</p>
+            <h2 className="mt-4 font-serif text-4xl text-[color:var(--paper)] sm:text-5xl">
+              A premium modern Indian organic food brand deeply rooted in traditional agriculture.
+            </h2>
+            <p className="mt-4 font-devanagari text-base text-[color:var(--brand-gold-soft)]">
+              परंपरा · पवित्रता · पोषण
+            </p>
+          </div>
+          <div className="space-y-5 text-base leading-8 text-[color:var(--muted-foreground)]">
+            <p>
+              The Annavya Foods experience is built around trust, authenticity, and grain quality. We highlight real farmers, real sourcing, and real processing standards so every inquiry begins with confidence.
+            </p>
+            <p>
+              This is not an ecommerce-first brand. It is a premium inquiry-led destination for families, retail partners, and distributors seeking certified millet products with a meaningful farm-to-family story.
+            </p>
+          </div>
         </div>
       </div>
     </section>
