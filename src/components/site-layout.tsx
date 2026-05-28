@@ -11,6 +11,7 @@ import {
 import { useState } from "react";
 
 import logo from "@/assets/annavya-logo.png";
+import { LanguageToggle, useT } from "@/lib/i18n";
 import {
   facebookHandle,
   instagramHandle,
@@ -36,17 +37,18 @@ const navItems: NavItem[] = [
 
 export function SiteLayout({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
+  const t = useT();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-[color:var(--line)] bg-[color:rgba(16,16,12,0.94)] backdrop-blur-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
           <Link to="/" className="flex items-center gap-3" aria-label="Annavya Foods home">
             <span className="logo-badge">
-              <img src={logo} alt="Annavya Foods logo" className="h-10 w-auto sm:h-12" />
+              <img src={logo} alt="Annavya Foods logo" className="h-10 w-auto sm:h-12" decoding="async" />
             </span>
             <div className="hidden min-[480px]:block">
-              <p className="font-display text-lg text-[color:var(--brand-gold-soft)]">Annavya Foods</p>
+              <p className="font-display text-lg text-[color:var(--brand-gold-soft)]">{t("Annavya Foods")}</p>
               <p className="font-devanagari text-[0.78rem] leading-none text-[color:var(--muted-foreground)]">
                 अन्न से परिवार तक
               </p>
@@ -61,30 +63,34 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
                 className="text-sm text-[color:var(--muted-ink)] transition-colors hover:text-[color:var(--paper)]"
                 activeProps={{ className: "text-[color:var(--paper)]" }}
               >
-                {item.label}
+                {t(item.label)}
               </Link>
             ))}
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
+            <LanguageToggle />
             <a href={`tel:${phoneNumber.replace(/\s+/g, "")}`} className="btn-outline">
               <Phone className="h-4 w-4" />
-              Call Now
+              {t("Call Now")}
             </a>
             <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" className="btn-primary">
               <MessageCircle className="h-4 w-4" />
-              WhatsApp
+              {t("WhatsApp")}
             </a>
           </div>
 
-          <button
-            type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--line)] text-[color:var(--paper)] lg:hidden"
-            onClick={() => setOpen((value) => !value)}
-            aria-label={open ? "Close menu" : "Open menu"}
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <LanguageToggle />
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--line)] text-[color:var(--paper)]"
+              onClick={() => setOpen((value) => !value)}
+              aria-label={open ? "Close menu" : "Open menu"}
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
 
         {open && (
@@ -97,17 +103,17 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
                   className="border-b border-[color:rgba(214,190,140,0.12)] py-3 text-[color:var(--paper)]"
                   onClick={() => setOpen(false)}
                 >
-                  {item.label}
+                  {t(item.label)}
                 </Link>
               ))}
               <div className="mt-4 flex flex-col gap-3">
                 <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" className="btn-primary justify-center">
                   <MessageCircle className="h-4 w-4" />
-                  WhatsApp Inquiry
+                  {t("WhatsApp Inquiry")}
                 </a>
                 <a href={`tel:${phoneNumber.replace(/\s+/g, "")}`} className="btn-outline justify-center">
                   <Phone className="h-4 w-4" />
-                  Call {phoneNumber}
+                  {t("Call Now")} {phoneNumber}
                 </a>
               </div>
             </div>
@@ -120,13 +126,13 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       <footer className="border-t border-[color:var(--line)] bg-[color:var(--surface-strong)]">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.3fr_0.8fr_0.9fr] lg:px-8">
           <div>
-            <span className="logo-badge"><img src={logo} alt="Annavya Foods emblem" className="h-14 w-auto" loading="lazy" /></span>
+            <span className="logo-badge"><img src={logo} alt="Annavya Foods emblem" className="h-14 w-auto" loading="lazy" decoding="async" /></span>
             <p className="mt-5 font-devanagari text-base text-[color:var(--brand-gold-soft)]">अन्नं ब्रह्म</p>
             <h2 className="mt-2 font-serif text-3xl text-[color:var(--paper)]">
-              Premium modern Indian millet sourcing rooted in traditional agriculture.
+              {t("Premium modern Indian millet sourcing rooted in traditional farming.")}
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-[color:var(--muted-foreground)]">
-              Annavya Foods is a premium millet supplier in India focused on trust, clean sourcing, and traditional grain excellence. We support distributor requirements, healthy food brands, and family buyers with direct farmer millets, certified processing, and premium product quality.
+              {t("Annavya Foods is a premium millet supplier in India. We focus on trust, clean sourcing and traditional grain quality. We support distributors, healthy food brands and families with direct farmer millets, certified processing and premium products.")}
             </p>
             <div className="mt-5 flex flex-wrap gap-2 text-xs text-[color:var(--brand-gold-soft)]">
               {seoKeywords.map((keyword) => (
@@ -138,12 +144,12 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
           </div>
 
           <div>
-            <h3 className="font-serif text-2xl text-[color:var(--paper)]">Quick Links</h3>
+            <h3 className="font-serif text-2xl text-[color:var(--paper)]">{t("Quick Links")}</h3>
             <ul className="mt-5 space-y-3 text-sm text-[color:var(--muted-ink)]">
               {navItems.map((item) => (
                 <li key={item.to}>
                   <Link to={item.to} className="hover:text-[color:var(--paper)]">
-                    {item.label}
+                    {t(item.label)}
                   </Link>
                 </li>
               ))}
@@ -151,7 +157,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
           </div>
 
           <div>
-            <h3 className="font-serif text-2xl text-[color:var(--paper)]">Connect</h3>
+            <h3 className="font-serif text-2xl text-[color:var(--paper)]">{t("Connect")}</h3>
             <ul className="mt-5 space-y-4 text-sm text-[color:var(--muted-ink)]">
               <li>
                 <a href={`tel:${phoneNumber.replace(/\s+/g, "")}`} className="hover:text-[color:var(--paper)]">
@@ -160,12 +166,12 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
               </li>
               <li>
                 <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" className="hover:text-[color:var(--paper)]">
-                  WhatsApp inquiries
+                  {t("WhatsApp inquiries")}
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPinned className="h-4 w-4 text-[color:var(--brand-gold)]" />
-                Supplies across India
+                {t("Supplies across India")}
               </li>
             </ul>
             <div className="mt-6 flex gap-3">
@@ -202,14 +208,14 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
         <MessageCircle className="h-7 w-7" />
       </a>
 
-      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-[color:var(--line)] bg-[color:rgba(16,16,12,0.98)] p-3 md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-[color:var(--line)] bg-[color:rgba(16,16,12,0.98)] p-3 md:hidden">
         <a href={`tel:${phoneNumber.replace(/\s+/g, "")}`} className="btn-outline justify-center">
           <Phone className="h-4 w-4" />
-          Call Now
+          {t("Call Now")}
         </a>
         <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" className="btn-primary justify-center">
           <MessageCircle className="h-4 w-4" />
-          WhatsApp
+          {t("WhatsApp")}
         </a>
       </div>
     </div>
