@@ -1,10 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, BadgeCheck, Leaf, Phone, ShieldCheck, TestTube2, Truck } from "lucide-react";
+import { ArrowRight, BadgeCheck, Leaf, Phone, ShieldCheck, Sparkles, TestTube2, Truck } from "lucide-react";
 
-import heroFarmer from "@/assets/millet-farmer-hero.webp";
+import heroFarmer from "@/assets/millet-farmer-hero-new.jpeg";
 import farmerCouple from "@/assets/farmer-couple.jpeg";
 import fieldFarmer from "@/assets/millet-farmer-field.jpeg";
-import processingUnit from "@/assets/processing-unit.jpeg";
+import processingUnit from "@/assets/millet-processing-new.png";
 import productRange from "@/assets/products-range.png";
 import foxtailPack from "@/assets/foxtail-pack.png";
 import barnyardPack from "@/assets/barnyard-pack.png";
